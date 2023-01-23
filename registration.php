@@ -58,7 +58,7 @@ if (!$conn) {
 		<div class="login-content">
 			<form action="registration.php" method="post">
 				<img src="img/ssamjang.png">
-				<h3 class="title">REGISTRATION FORM</h3>
+				<h3 class="title">REGISTRATION FORMS</h3>
 				<div class="input-div one">
 					<div class="i">
 						<i class="fas fa-user"></i>
