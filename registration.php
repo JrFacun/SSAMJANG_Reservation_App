@@ -33,7 +33,7 @@ if (!$conn) {
 				header("location:registration.php");
 			}
 		} else {
-			header("location:login.php");
+			header("Location:login.php?error=Incorrect Username or password");
 		}
 	}
 }

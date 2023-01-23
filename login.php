@@ -22,6 +22,9 @@ require_once('log_process.php');
         <form action="registration.php" class="sign-in-form" method="post">
           <img src="img/ssamjang.png" width="300px" height="300px">
           <h2 class="title">Sign in</h2>
+          <?php if (isset($_GET['error'])) { ?>
+							<p class="error"><?php echo $_GET['error']; ?></p>
+						<?php } ?>
           <div class="input-field">
             <i class="fas fa-user"></i>
             <input type="text" placeholder="Username" name="username" required />

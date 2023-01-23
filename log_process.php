@@ -9,6 +9,6 @@ if (isset($_POST['create'])) {
     $password = $_POST['password'];
 
     $sql = "INSERT INTO tblregistration (RUser, REmail, RPass) VALUES (?,?,?)";
-    $stmtinsert = $db->prepare($sql);
+    $stmtinsert = $conn->prepare($sql);
     $result = $stmtinsert->execute([$user, $email, $password]);
 }

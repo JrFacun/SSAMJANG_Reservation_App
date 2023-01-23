@@ -15,7 +15,7 @@ if (isset($_POST['create'])) {
     $email = $_POST['email'];
 
     $sql = "INSERT INTO tblcustomer (CFname, CLname, CAddress, CContactnum, CEmail, RID) VALUES (?,?,?,?,?,?)";
-    $stmtinsert = $db->prepare($sql);
+    $stmtinsert = $conn->prepare($sql);
     $result = $stmtinsert->execute([$firstname, $lastname, $address, $contact, $email,$test]);
 
 }
