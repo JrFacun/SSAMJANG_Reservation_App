@@ -1,10 +1,8 @@
 <?php
 require_once('config.php');
 require_once('reg_process.php');
-
 session_start();
-$_SESSION['status'] = 'invalid';
-$conn = mysqli_connect('localhost', 'root', '', 'useraccounts');
+
 if (!$conn) {
 	echo 'connection failed!';
 } else if (isset($_POST['create'])) {
