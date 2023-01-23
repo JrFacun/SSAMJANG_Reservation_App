@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../registrationpage"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "foodie-master"
+	}
+}
