@@ -49,7 +49,7 @@ require_once('session.php');
 
       <img src="./assets/images/ssamjang.png" width="100" height="100">
       <h1>
-        <a href="#" class="logo"> MIKOL SSAMJANG Korean Grill Reservation App<span class="span"></span></a>
+        <a href="#" class="logo">SSAMJANG Korean Grill Reservation App<span class="span"></span></a>
       </h1>
 
       <nav class="navbar" data-navbar>
