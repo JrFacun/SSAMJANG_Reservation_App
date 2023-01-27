@@ -2,7 +2,6 @@
 require_once('config.php');
 require_once('log_process.php');
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,15 +22,15 @@ require_once('log_process.php');
           <img src="img/ssamjang.png" width="300px" height="300px">
           <h2 class="title">Sign in</h2>
           <?php if (isset($_GET['error'])) { ?>
-							<p class="error"><?php echo $_GET['error']; ?></p>
-						<?php } ?>
+            <p class="error"><?php echo $_GET['error']; ?></p>
+          <?php } ?>
           <div class="input-field">
             <i class="fas fa-user"></i>
             <input type="text" placeholder="Username" name="username" required />
           </div>
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" name="password" required/>
+            <input type="password" placeholder="Password" name="password" required />
           </div>
 
           <input type="submit" value="Login" class="btn solid" name="submit" />
@@ -44,16 +43,22 @@ require_once('log_process.php');
             <a href="https://instagram.com/ssamjang_korean_restaurant?igshid=Yzg5MTU1MDY=" class="social-icon">
               <i class="fab fa-instagram"></i>
             </a>
-        
+
           </div>
         </form>
-        <form action="login.php" method="post" class="sign-up-form">
+        <form action="log_process.php" method="post" class="sign-up-form">
           <img src="img/ssamjang.png" width="300px" height="300px">
           <h2 class="title">Sign up</h2>
+          <?php if (isset($_GET['err_u'])) { ?>
+            <p class="error"><?php echo $_GET['err_u']; ?></p>
+          <?php } ?>
           <div class="input-field">
             <i class="fas fa-user"></i>
             <input type="text" name="user" id="user" placeholder="Username" required />
           </div>
+          <?php if (isset($_GET['err_e'])) { ?>
+            <p class="error"><?php echo $_GET['err_e']; ?></p>
+          <?php } ?>
           <div class="input-field">
             <i class="fas fa-envelope"></i>
             <input type="email" name="email" id="email" placeholder="Email" required />
@@ -71,7 +76,7 @@ require_once('log_process.php');
             <a href="https://instagram.com/ssamjang_korean_restaurant?igshid=Yzg5MTU1MDY=" class="social-icon">
               <i class="fab fa-instagram"></i>
             </a>
-            
+
           </div>
         </form>
       </div>
