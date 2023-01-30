@@ -46,7 +46,7 @@ require_once('log_process.php');
 
           </div>
         </form>
-        <form action="log_process.php" method="post" class="sign-up-form">
+        <form action="login.php" method="post" class="sign-up-form">
           <img src="img/ssamjang.png" width="300px" height="300px">
           <h2 class="title">Sign up</h2>
           <?php if (isset($_GET['err_u'])) { ?>
@@ -110,6 +110,7 @@ require_once('log_process.php');
     </div>
   </div>
   <script src="js/app.js"></script>
+
 </body>
 
 </html>

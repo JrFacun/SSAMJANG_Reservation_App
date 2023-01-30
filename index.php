@@ -1,5 +1,6 @@
 <?php
 require_once('session.php');
+require('config.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,9 +26,10 @@ require_once('session.php');
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Rubik:wght@400;500;600;700&family=Shadows+Into+Light&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Rubik:wght@400;500;600;700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
 
   <!-- 
     - preload images
@@ -35,6 +37,7 @@ require_once('session.php');
   <!-- <link rel="preload" as="image" href="./assets/images/set.png" media="min-width(768px)"> -->
   <!--<link rel="preload" as="image" href="./assets/images/hero-banner-bg.png" media="min-width(768px)">-->
   <!--link rel="preload" as="image" href="./assets/images/hero-bg.jpg">-->
+  <script src="https://kit.fontawesome.com/a81368914c.js"></script>
 
 </head>
 
@@ -46,47 +49,56 @@ require_once('session.php');
 
   <header class="header" data-header>
     <div class="container">
-
-      <img src="./assets/images/ssamjang.png" width="100" height="100">
+      <img src="./assets/images/ssamjang.png" width="50" height="50">
       <h1>
-        <a href="#" class="logo">SSAMJANG Korean Grill Reservation App<span class="span"></span></a>
+        <a href="#" class="logo">SSAMJANG Korean Grill Reservation App<span class="span">.</span></a>
       </h1>
 
       <nav class="navbar" data-navbar>
         <ul class="navbar-list">
 
           <li class="nav-item">
-            <a href="#home" class="navbar-link" data-nav-link>Home</a>
+            <a href="#home" class="navbar-link" data-nav-link><i class="fas fa-home"></i> Home</a>
           </li>
 
           <li class="nav-item">
-            <a href="#about" class="navbar-link" data-nav-link>About Us</a>
+            <a href="#about" class="navbar-link" data-nav-link><i class="fas fa-users"></i> About</a>
           </li>
 
           <li class="nav-item">
-            <a href="#food-menu" class="navbar-link" data-nav-link>Dishes</a>
+            <a href="#food-menu" class="navbar-link" data-nav-link><i class="fas fa-utensils"></i> Dishes</a>
           </li>
 
           <li class="nav-item">
-            <a href="#" class="navbar-link" data-nav-link>Cart</a>
+            <a href="cart.php" class="navbar-link" data-nav-link><i class="fa fa-shopping-cart"></i> Cart</a>
           </li>
-          <li class="nav-item">
-              <a href="logout.php" class="navbar-link" data-nav-link>Log Out</a>
-            
-            
-          </li>
-        </ul>
-      </nav>
 
+          <li class="nav-item">
+            <a href="#" class="navbar-link" data-nav-link><i class="fa fa-fw fa-user"></i> User</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="logout.php" class="navbar-link" data-nav-link><i class="fas fa-sign-out-alt"></i> Log Out</a>
+          </li>
+
+    </div>
+    </ul>
+    </nav>
+    <!-- 
       <div class="header-btn-group">
-
-
-        <button class="nav-toggle-btn" aria-label="Toggle Menu" data-menu-toggle-btn>
-          <span class="line top"></span>
-          <span class="line middle"></span>
-          <span class="line bottom"></span>
+        <button class="search-btn" aria-label="Search" data-search-btn>
+          <ion-icon name="search-outline"></ion-icon>
         </button>
-      </div>
+
+        <button class="btn btn-hover">Reservation</button>-->
+
+    <button class="nav-toggle-btn" aria-label="Toggle Menu" data-menu-toggle-btn>
+      <span class="line top"></span>
+      <span class="line middle"></span>
+      <span class="line bottom"></span>
+    </button>
+    </div>
+
 
     </div>
   </header>
@@ -98,8 +110,7 @@ require_once('session.php');
   <div class="search-container" data-search-container>
 
     <div class="search-box">
-      <input type="search" name="search" aria-label="Search here" placeholder="Type keywords here..."
-        class="search-input">
+      <input type="search" name="search" aria-label="Search here" placeholder="Type keywords here..." class="search-input">
 
       <button class="search-submit" aria-label="Submit search" data-search-submit-btn>
         <ion-icon name="search-outline"></ion-icon>
@@ -117,7 +128,7 @@ require_once('session.php');
         - #HERO
       -->
 
-      <section class="hero" id="home" style="background-image: url('./assets/images/back.png')">
+      <section class="hero" id="home" style="background-image: url('./assets/images/backssss.png')">
         <div class="container">
 
           <div class="hero-content">
@@ -128,7 +139,6 @@ require_once('session.php');
 
             <p class="hero-text">Enjoy Unlimited Korean BBQ with your family.</p>
 
-            <button class="btn">Book A Table</button>
 
           </div>
 
@@ -136,8 +146,7 @@ require_once('session.php');
             <!--<img src="./assets/images/hero-banner-bg.png" width="820" height="716" alt="" aria-hidden="true"
               class="w-100 hero-img-bg">-->
 
-            <img src="./assets/images/set.png" width="700" height="637" loading="lazy" alt="Burger"
-              class="w-100 hero-img">
+            <img src="./assets/images/set.png" width="700" height="637" loading="lazy" alt="Burger" class="w-100 hero-img">
           </figure>
 
         </div>
@@ -161,8 +170,7 @@ require_once('session.php');
                   Chewy Korean rice cakes smothered in a sweet and spicy gochujang sauce and molten cheese.
                 </p>
 
-                <img src="./assets/images/teokk.png" width="400" height="400" loading="lazy" alt="Maxican Pizza"
-                  class="w-100 card-banner">
+                <img src="./assets/images/ricecake.png" width="400" height="400" loading="lazy" alt="Maxican Pizza" class="w-100 card-banner">
 
               </div>
             </li>
@@ -176,8 +184,7 @@ require_once('session.php');
                   Tender pork stir-fried with onions, carrots, and garlic in a spicy, sweet, and savory gochujang sauce.
                 </p>
 
-                <img src="./assets/images/promo-2.png" width="300" height="300" loading="lazy" alt="Soft Drinks"
-                  class="w-100 card-banner">
+                <img src="./assets/images/eme.png" width="300" height="300" loading="lazy" alt="Soft Drinks" class="w-100 card-banner">
 
               </div>
             </li>
@@ -192,8 +199,7 @@ require_once('session.php');
                   of seafood.
                 </p>
 
-                <img src="./assets/images/promo-3.png" width="300" height="300" loading="lazy" alt="French Fry"
-                  class="w-100 card-banner">
+                <img src="./assets/images/eme3.png" width="300" height="300" loading="lazy" alt="French Fry" class="w-100 card-banner">
 
               </div>
             </li>
@@ -208,8 +214,7 @@ require_once('session.php');
                   and ginseng.
                 </p>
 
-                <img src="./assets/images/SAMGYETANG.png" width="300" height="300" loading="lazy" alt="Burger Kingo"
-                  class="w-100 card-banner">
+                <img src="./assets/images/food1.png" width="300" height="300" loading="lazy" alt="Burger Kingo" class="w-100 card-banner">
 
               </div>
             </li>
@@ -223,8 +228,7 @@ require_once('session.php');
                   is a traditional Korean beef soup made with marinated beef, carrots, mushrooms, and Dangmyeon noodles.
                 </p>
 
-                <img src="./assets/images/DDUKBEGI.png" width="300" height="300" loading="lazy" alt="Burger Kingo"
-                  class="w-100 card-banner">
+                <img src="./assets/images/eat2.png" width="300" height="300" loading="lazy" alt="Burger Kingo" class="w-100 card-banner">
 
               </div>
             </li>
@@ -239,8 +243,7 @@ require_once('session.php');
                   tofu.
                 </p>
 
-                <img src="./assets/images/KIMCHI.png" width="500" height="500" loading="lazy" alt="Burger Kingo"
-                  class="w-100 card-banner">
+                <img src="./assets/images/eat1.png" width="500" height="500" loading="lazy" alt="Burger Kingo" class="w-100 card-banner">
 
               </div>
             </li>
@@ -257,8 +260,7 @@ require_once('session.php');
         <div class="container">
 
           <div class="about-banner">
-            <img src="./assets/images/restau.png" width="509" height="459" loading="lazy" alt="SSAMJANG Restaurant"
-              class="w-100 about-img">
+            <img src="./assets/images/restau.png" width="509" height="459" loading="lazy" alt="SSAMJANG Restaurant" class="w-100 about-img">
 
           </div>
 
@@ -270,7 +272,7 @@ require_once('session.php');
             </h2>
 
             <p class="section-text">
-              SSAMAJNG M
+              Ssam means "wrapped" and Jang means "paste" or "thick sauce". Together as SsamJang they mean "wrapping Sauce". It is korea's representative sauce and add to meat taste unique.
             </p>
 
             <ul class="about-list">
@@ -333,188 +335,24 @@ require_once('session.php');
 
           </ul>
 
-          <ul class="food-menu-list">
-
-            <li>
-              <div class="food-menu-card">
-
-                <div class="card-banner">
-                  <img src="./assets/images/deji.png" width="300" height="300" loading="lazy"
-                    alt="Fried Chicken Unlimited" class="w-100">
-
-
-
-                  <button class="btn food-menu-btn">Reserve Now</button>
-                </div>
-
-                <div class="wrapper">
-
-                  <h3 class="h3 card-title">Deji Galbi<br> 데지갈비 </h3>
-
-                  <div class="price-wrapper">
-
-                    <p class="price-text">Price:</p>
-
-                    <data class="price">₱250.00</data>
-
-
-
-                  </div>
-
-                </div>
-            </li>
-
-            <li>
-              <div class="food-menu-card">
-
-                <div class="card-banner">
-                  <img src="./assets/images/sam.png" width="300" height="300" loading="lazy" alt="Burger King Whopper"
-                    class="w-100">
-
-
-
-                  <button class="btn food-menu-btn">Reserve Now</button>
-                </div>
-
-                <div class="wrapper">
-
-
-                  <h3 class="h3 card-title">Samgyupsal <br> 삼겹살 </h3>
-
-                  <div class="price-wrapper">
-
-                    <p class="price-text">Price:</p>
-
-                    <data class="price" value="29.00">₱230.00</data>
-
-
-                  </div>
-
-                </div>
-            </li>
-
-            <li>
-              <div class="food-menu-card">
-
-                <div class="card-banner">
-                  <img src="./assets/images/dak.png" width="300" height="300" loading="lazy" alt="White Castle Pizzas"
-                    class="w-100">
-
-
-
-                  <button class="btn food-menu-btn">Reserve Now</button>
-                </div>
-
-                <div class="wrapper">
-
-
-                  <h3 class="h3 card-title">Dak Galbi <br> 닭갈비</h3>
-
-                  <div class="price-wrapper">
-
-                    <p class="price-text">Price:</p>
-
-                    <data class="price" value="49.00">₱230.00</data>
-
-
-
-                  </div>
-
-                </div>
-            </li>
-
-            <li>
-              <div class="food-menu-card">
-
-                <div class="card-banner">
-                  <img src="./assets/images/yang.png" width="300" height="300" loading="lazy" alt="Bell Burrito Supreme"
-                    class="w-100">
-
-
-
-                  <button class="btn food-menu-btn">Reserve Now</button>
-                </div>
-
-                <div class="wrapper">
-
-
-
-                  <h3 class="h3 card-title">Yangnyeom Woosam <br> 약념우삼</h3>
-
-                  <div class="price-wrapper">
-
-                    <p class="price-text">Price:</p>
-
-                    <data class="price" value="59.00 ">₱250.00</data>
-
-
-
-                  </div>
-
-                </div>
-            </li>
-
-            <li>
-              <div class="food-menu-card">
-
-                <div class="card-banner">
-                  <img src="./assets/images/gochu.png" width="300" height="300" loading="lazy"
-                    alt="Kung Pao Chicken BBQ" class="w-100">
-
-
-
-                  <button class="btn food-menu-btn">Reserve Now</button>
-                </div>
-
-                <div class="wrapper">
-
-
-
-                  <h3 class="h3 card-title">Gochujang Woosam<br> 고추장우삼</h3>
-
-                  <div class="price-wrapper">
-
-                    <p class="price-text">Price:</p>
-
-                    <data class="price" value="49.00">₱250.00</data>
-
-
-
-                  </div>
-
-                </div>
-            </li>
-
-            <li>
-              <div class="food-menu-card">
-
-                <div class="card-banner">
-                  <img src="./assets/images/woosam.png" width="300" height="300" loading="lazy" alt="Wendy's Chicken"
-                    class="w-100">
-
-
-
-                  <button class="btn food-menu-btn">Reserve Now</button>
-                </div>
-
-                <div class="wrapper">
-
-
-                  <h3 class="h3 card-title">Woosam<br> 우삼 </h3>
-
-                  <div class="price-wrapper">
-
-                    <p class="price-text">Price:</p>
-
-                    <data class="price" value="49.00">₱250.00</data>
-
-                  </div>
-
-                </div>
-            </li>
-
-          </ul>
-
+          <?php
+          $select_products = mysqli_query($conn, "SELECT * FROM tblproduct");
+          if (mysqli_num_rows($select_products) > 0) {
+            while ($fetch_product = mysqli_fetch_assoc($select_products)) {
+
+          ?>
+              <form action="addcart.php" method="post">
+                <img class="" src="images/<?php echo $fetch_product['image']; ?>" alt="">
+                <h3><?php echo $fetch_product['name']; ?></h3>
+                <h4><?php echo $fetch_product['price']; ?></h4>
+                <input type="hidden" name="product_name" value="<?php echo $fetch_product['name']; ?>">
+                <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
+                <input type="submit" value="add to cart" name="add_to_cart">
+              </form>
+          <?php
+            };
+          };
+          ?>
 
         </div>
       </section>
@@ -546,10 +384,10 @@ require_once('session.php');
             <button class="btn btn-hover">Reserve Now</button>
           </div>
 
-          <!-- <video width="700" height="637" autoplay>
+          <video width="700" height="637" autoplay>
             <source src="./assets/video/VIDEO.mp4" type="video/ogg">
             Your browser does not support the video tag.
-          </video> -->
+          </video>
 
           <!-- <figure class="cta-banner">
             <img src="./assets/images/VIDEO.mp4" width="700" height="637" loading="lazy" alt="Burger"
@@ -562,83 +400,19 @@ require_once('session.php');
         - #DELIVERY
       -->
 
-      <section class="section section-divider gray delivery">
+      <section class="section section-divider white testi">
         <div class="container">
 
-          <div class="delivery-content">
+          <!-- <p class="section-subtitle">Testimonials</p> -->
 
-            <h2 class="h2 section-title">
-              Booking Calendar
-            </h2>
-            <div class="calender">
-              <div class="month">
-                <h3>January 2023</h3>
-              </div>
-              <table>
-                <tr>
-                  <th>Sun</th>
-                  <th>Mon</th>
-                  <th>The</th>
-                  <th>Wed</th>
-                  <th>Thu</th>
-                  <th>Fri</th>
-                  <th>Sat</th>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td>1</td>
-                  <td>2</td>
-                  <td>3</td>
-                  <td>4</td>
-                  <td>5</td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td>7</td>
-                  <td>8</td>
-                  <td>9</td>
-                  <td>10</td>
-                  <td>11</td>
-                  <td>12</td>
-                </tr>
-                <tr>
-                  <td>13</td>
-                  <td>14</td>
-                  <td>15</td>
-                  <td>16</td>
-                  <td>17</td>
-                  <td>18</td>
-                  <td>19</td>
-                </tr>
-                <tr>
-                  <td>20</td>
-                  <td>21</td>
-                  <td>22</td>
-                  <td>23</td>
-                  <td>24</td>
-                  <td>25</td>
-                  <td>26</td>
-                </tr>
-                <tr>
-                  <td>27</td>
-                  <td>28</td>
-                  <td>29</td>
-                  <td>30</td>
-                  <td>31</td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </table>
-            </div>
+          <h2 class="h2 section-title">
+            Booking <span class="span">Calendar</span>
+          </h2>
 
-
-
-            <button class="btn btn-hover">Reserve Now</button>
-          </div>
-
-
-
+          <p class="section-text">
+            Here are the whole calendar of the year that user enables to book any date of the year
+          </p>
+          <button class="btn btn-hover" type="submit">Click to See the Calendar!</button>
         </div>
       </section>
       <!-- 
@@ -653,13 +427,12 @@ require_once('session.php');
             <li class="banner-item banner-lg">
               <div class="banner-card">
 
-                <img src="./assets/images/unlirice.png" width="550" height="450" loading="lazy"
-                  alt="Discount For Delicious Tasty Burgers!" class="banner-img">
+                <img src="./assets/images/unlirice.png" width="550" height="450" loading="lazy" alt="Discount For Delicious Tasty Burgers!" class="banner-img">
 
                 <div class="banner-item-content">
 
 
-                  <button class="btn">Reserve Now</button>
+                  <!-- <button class="btn">Reserve Now</button> -->
                 </div>
 
               </div>
@@ -668,15 +441,14 @@ require_once('session.php');
             <li class="banner-item banner-sm">
               <div class="banner-card">
 
-                <img src="./assets/images/hotteok.png" width="550" height="465" loading="lazy" alt="Delicious Pizza"
-                  class="banner-img">
+                <img src="./assets/images/hotteok.png" width="550" height="465" loading="lazy" alt="Delicious Pizza" class="banner-img">
 
                 <div class="banner-item-content">
                   <!--<h3 class="banner-title">Delicious Hotteok</h3>
 
                   <p class="banner-text">We serve it Here</p>-->
 
-                  <button class="btn">Reserve Now</button>
+                  <!-- <button class="btn">Reserve Now</button> -->
                 </div>
 
               </div>
@@ -685,15 +457,14 @@ require_once('session.php');
             <li class="banner-item banner-sm">
               <div class="banner-card">
 
-                <img src="./assets/images/kimchis.png" width="550" height="465" loading="lazy" alt="American Burgers"
-                  class="banner-img">
+                <img src="./assets/images/kimchis.png" width="550" height="465" loading="lazy" alt="American Burgers" class="banner-img">
 
                 <div class="banner-item-content">
                   <!-- <h3 class="banner-title">Authentic Kimchi</h3>
 
                   <p class="banner-text">Taste it Now!</p>-->
 
-                  <button class="btn">Reserve Now</button>
+                  <!-- <button class="btn">Reserve Now</button> -->
                 </div>
 
               </div>
@@ -702,15 +473,14 @@ require_once('session.php');
             <li class="banner-item banner-md">
               <div class="banner-card">
 
-                <img src="./assets/images/unlicheese.png" width="400" height="200" loading="lazy"
-                  alt="Tasty Buzzed Pizza" class="banner-img">
+                <img src="./assets/images/unlicheese.png" width="400" height="200" loading="lazy" alt="Tasty Buzzed Pizza" class="banner-img">
 
                 <div class="banner-item-content">
                   <!-- <h3 class="banner-title">Unli Cheese Unli Ice Tea</h3>
 
                   <p class="banner-text">Come on and Tase it!</p>-->
 
-                  <button class="btn">Reserve Now</button>
+                  <!-- <button class="btn">Reserve Now</button> -->
                 </div>
 
               </div>
@@ -786,35 +556,6 @@ require_once('session.php');
               </li>
 
             </ul>
-
-            <form action="" class="footer-form">
-
-              <p class="footer-list-title">Reserve your Table</p>
-
-              <div class="input-wrapper">
-
-                <input type="text" name="First Name" required placeholder="First Name" aria-label="First Name"
-                  class="input-field"><br>
-                <input type="text" name="Last Name" required placeholder="Last Name" aria-label="Last Name"
-                  class="input-field"><br>
-                <input type="text" name="Address" required placeholder="Address" aria-label="Address"
-                  class="input-field"><br>
-                <input type="phonenumber" name="Contact Number" required placeholder="Contact Number"
-                  aria-label="Contact Num" class="input-field"><br>
-                <input type="number" name="Number of Person" required placeholder="Number of Person"
-                  aria-label="Number of Person" class="input-field"><br>
-              </div>
-
-              <div class="input-wrapper">
-
-                <input type="date" name="booking_date" aria-label="Reservation date" class="input-field"><br>
-                <input type="time" name="booking_date" aria-label="Reservation time" class="input-field">
-
-              </div>
-
-              <button type="submit" class="btn">Book a Table</button>
-
-            </form>
 
           </div>
         </div>

@@ -15,8 +15,10 @@ if (isset($_POST['create'])) {
     $resultU = mysqli_query($conn, $sql_user);
 
     if (mysqli_num_rows($resultE) > 0) {
+        $_SESSION['alert'] = '1';
         header("Location:login.php?err_e=Email Already Taken");
     } else if (mysqli_num_rows($resultU) > 0) {
+        $_SESSION['alert'] = '1';
         header("Location:login.php?err_u=Username Alredy Taken");
     } else {
         $sql = "INSERT INTO tblregistration (RUser, REmail, RPass) VALUES (?,?,?)";
@@ -25,3 +27,4 @@ if (isset($_POST['create'])) {
         header("Location:login.php");
     }
 }
+
