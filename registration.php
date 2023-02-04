@@ -3,9 +3,27 @@ require_once('config.php');
 require_once('reg_process.php');
 session_start();
 
+$_SESSION['res_status'] = 'inactive';
+
+
 if (!$conn) {
 	echo 'connection failed!';
 } else if (isset($_POST['create'])) {
+	$test =  $_SESSION['RID'];
+	$firstname = $_POST['firstname'];
+	$lastname = $_POST['lastname'];
+	$address = $_POST['address'];
+	$contact = $_POST['contact'];
+
+	$sql = "INSERT INTO tblcustomer (CFname, CLname, CAddress, CContactnum, RID) VALUES (?,?,?,?,?)";
+	$stmtinsert = $conn->prepare($sql);
+	$result = $stmtinsert->execute([$firstname, $lastname, $address, $contact, $test]);
+
+	$sqlname_validate = mysqli_query($conn, "SELECT * FROM tblcustomer WHERE RID = '$test'");
+	if(mysqli_num_rows($sqlname_validate) > 0){
+		$fetch_name = mysqli_fetch_assoc($sqlname_validate);
+		$_SESSION['name'] = $fetch_name['CFname'];
+	}
 	header("location:index.php");
 } else {
 	if (isset($_POST['submit'])) {
@@ -14,6 +32,7 @@ if (!$conn) {
 
 		$sql = "SELECT * FROM tblRegistration WHERE RUser = '$username' AND RPass = '$password'";
 		$result = mysqli_query($conn, $sql);
+
 
 		if (mysqli_num_rows($result) === 1) {
 			$_SESSION['status'] = 'valid';
@@ -35,6 +54,12 @@ if (!$conn) {
 		} else {
 			header("Location:login.php?error=Incorrect Username or password");
 		}
+	}
+	$test =  $_SESSION['RID'];
+	$sqlname_validate = mysqli_query($conn, "SELECT * FROM tblcustomer WHERE RID = '$test'");
+	if(mysqli_num_rows($sqlname_validate) > 0){
+		$fetch_name = mysqli_fetch_assoc($sqlname_validate);
+		$_SESSION['name'] = $fetch_name['CFname'];
 	}
 }
 ?>
@@ -95,15 +120,7 @@ if (!$conn) {
 						<input type="text" name="contact" id="contact" class="input" required>
 					</div>
 				</div>
-				<div class="input-div pass">
-					<div class="i">
-						<i class="fas fa-envelope"></i>
-					</div>
-					<div class="div">
-						<h5>Email</h5>
-						<input type="email" name="email" id="email" class="input" required>
-					</div>
-				</div>
+				<!-- titikman -->
 				<input type="submit" name="create" id="create" class="btn" value="submit">
 			</form>
 		</div>

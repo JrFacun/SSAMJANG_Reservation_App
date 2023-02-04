@@ -62,19 +62,25 @@ require('config.php');
           </li>
 
           <li class="nav-item">
-            <a href="#about" class="navbar-link" data-nav-link><i class="fas fa-users"></i> About</a>
+            <a href="#about" class="navbar-link" data-nav-link><i class="fas fa-users" ></i> About</a>
           </li>
 
           <li class="nav-item">
             <a href="#food-menu" class="navbar-link" data-nav-link><i class="fas fa-utensils"></i> Dishes</a>
           </li>
+          <?php
+
+          $select_rows = mysqli_query($conn, "SELECT * FROM `tblcart`");
+          $row_count = mysqli_num_rows($select_rows);
+
+          ?>
 
           <li class="nav-item">
-            <a href="cart.php" class="navbar-link" data-nav-link><i class="fa fa-shopping-cart"></i> Cart</a>
+            <a href="cart.php" class="navbar-link" data-nav-link><i class="fa fa-shopping-cart"></i> Cart <span><?php echo $row_count; ?></span></a>
           </li>
 
           <li class="nav-item">
-            <a href="#" class="navbar-link" data-nav-link><i class="fa fa-fw fa-user"></i> User</a>
+            <a href="profile.php" class="navbar-link" data-nav-link><i class="fa fa-fw fa-user"></i><?php echo $_SESSION['name'] ?></a>
           </li>
 
           <li class="nav-item">
@@ -345,6 +351,7 @@ require('config.php');
                 <img class="" src="images/<?php echo $fetch_product['image']; ?>" alt="">
                 <h3><?php echo $fetch_product['name']; ?></h3>
                 <h4><?php echo $fetch_product['price']; ?></h4>
+                <input type="hidden" name="product_photo" value="<?php echo $fetch_product['image']; ?>">
                 <input type="hidden" name="product_name" value="<?php echo $fetch_product['name']; ?>">
                 <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
                 <input type="submit" value="add to cart" name="add_to_cart">
@@ -384,10 +391,10 @@ require('config.php');
             <button class="btn btn-hover">Reserve Now</button>
           </div>
 
-          <video width="700" height="637" autoplay>
+          <!-- <video width="700" height="637" autoplay>
             <source src="./assets/video/VIDEO.mp4" type="video/ogg">
             Your browser does not support the video tag.
-          </video>
+          </video> -->
 
           <!-- <figure class="cta-banner">
             <img src="./assets/images/VIDEO.mp4" width="700" height="637" loading="lazy" alt="Burger"
@@ -588,6 +595,7 @@ require('config.php');
   -->
       <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
       <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 
 </body>
 
